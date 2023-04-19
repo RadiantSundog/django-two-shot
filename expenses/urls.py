@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import redirect
-from accounts.views import user_login
+from accounts.views import user_login, user_logout
 
 
 def redirect_to_receipts_list(request):
@@ -29,4 +29,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("receipts/", include("receipts.urls")),
     path("accounts/login/", user_login, name="login"),
+    path("accounts/logout/", user_logout, name="logout"),
 ]
