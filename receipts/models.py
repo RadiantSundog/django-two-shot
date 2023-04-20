@@ -37,7 +37,7 @@ class Receipt(models.Model):
         decimal_places=3,
         max_digits=10,
     )
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField()
     purchaser = models.ForeignKey(
         User,
         related_name="receipts",
